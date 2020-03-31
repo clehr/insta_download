@@ -23,6 +23,8 @@ html {
 .button {
     width: 30%;
     border: white thin solid;
+    margin-left: 10px;
+    text-align: center;
 }
 
 .row {
