@@ -8,10 +8,10 @@ const App = () => {
         <div className={"content"}>
             <h1>Insta Download!</h1>
 
-            <p>Just copy your image/video and it will appear here</p>
+            <label className={"label"} htmlFor={"downloadUrl"}>Just copy your image/video and it will appear here</label>
 
             <div className={"row"}>
-                <input type="text"/>
+                <input id="downloadUrl" type="text"/>
                 <a className={"button"} href={"./"}>Download</a>
             </div>
         </div>

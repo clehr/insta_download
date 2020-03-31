@@ -40,6 +40,11 @@ a {
     margin-left: 40px;
 }
 
+.label {
+    font-size: 10px;
+}
+
 .row {
     display: flex;
+    justify-content: center;
 }
