@@ -6,6 +6,8 @@ html {
     background-size: cover;
 
     color: antiquewhite;
+
+    font-family: 'Open Sans', sans-serif;
 }
 
 .App {
@@ -26,6 +28,7 @@ html {
     margin-left: 10px;
     text-align: center;
 }
+
 
 .row {
     display: flex;
