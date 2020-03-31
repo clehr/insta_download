@@ -12,7 +12,7 @@ const App = () => {
 
             <div className={"row"}>
                 <input id="downloadUrl_input" type="text"/>
-                <a className={"button"} href="/images/myw3schoolsimage.jpg" download>Download</a>
+                <a  className={"button"} href="./images/background.jpeg" download>Download</a>
             </div>
         </div>
     </div>
