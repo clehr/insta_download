@@ -2,7 +2,12 @@ import React from 'react';
 
 const App = () => {
 
-    React.useEffect(() => console.log("Test"));
+    const [image, setImage] = React.useState('');
+
+    React.useEffect(() => {
+            setImage("test");
+        }
+    );
 
     return <div className={"App"}>
         <div className={"content"}>
@@ -11,7 +16,7 @@ const App = () => {
             <label className={"label"} htmlFor={"downloadUrl"}>Just copy your image/video and it will appear here</label>
 
             <div className={"row"}>
-                <input id="downloadUrl_input" type="text"/>
+                <input id="downloadUrl_input" type="text" value={image}/>
                 <a  className={"button"} href="./images/background.jpeg" download>Download</a>
             </div>
         </div>
