@@ -9,8 +9,12 @@ const App = () => {
             <h1>Insta Download!</h1>
 
             <p>Just copy your image/video and it will appear here</p>
-            <input type="text"/>
-            <button>Download</button>
+
+            <div className={"row"}>
+                <input type="text"/>
+                <div className={"button"}>Download</div>
+            </div>
+
         </div>
 
     </div>
