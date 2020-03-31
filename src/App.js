@@ -2,14 +2,6 @@ import React from 'react';
 
 const App = () => {
 
-    navigator.clipboard.readText()
-        .then(text => {
-            setImageUrl(text);
-        })
-        .catch(err => {
-            console.error('Failed to read clipboard contents: ', err);
-        });
-
     const [imageUrl, setImageUrl] = React.useState('');
 
     return <div className={"App"}>
