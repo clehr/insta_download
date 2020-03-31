@@ -37,6 +37,7 @@ a {
 
 .button:hover {
     transform: scale(1.5);
+    margin-left: 40px;
 }
 
 .row {
