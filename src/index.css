@@ -33,18 +33,21 @@ a {
     margin-left: 10px;
     text-align: center;
     transition: all .2s ease-in-out;
+    padding: 6px;
 }
 
 .button:hover {
-    transform: scale(1.5);
-    margin-left: 40px;
+    transform: scale(1.3);
+    margin-left: 20px;
+    cursor: pointer;
 }
 
 .label {
-    font-size: 10px;
+    font-size: 14px;
 }
 
 .row {
     display: flex;
     justify-content: center;
+    margin-top: 10px;
 }
