@@ -2,12 +2,15 @@ import React from 'react';
 
 const App = () => {
 
-    const [image, setImage] = React.useState('');
+    navigator.clipboard.readText()
+        .then(text => {
+            setImageUrl(text);
+        })
+        .catch(err => {
+            console.error('Failed to read clipboard contents: ', err);
+        });
 
-    React.useEffect(() => {
-            setImage("test");
-        }
-    );
+    const [imageUrl, setImageUrl] = React.useState('');
 
     return <div className={"App"}>
         <div className={"content"}>
@@ -16,7 +19,7 @@ const App = () => {
             <label className={"label"} htmlFor={"downloadUrl"}>Just copy your image/video and it will appear here</label>
 
             <div className={"row"}>
-                <input id="downloadUrl_input" type="text" value={image}/>
+                <input id="downloadUrl_input" type="text" onChange={(event) => setImageUrl(event.target.value)} value={imageUrl} />
                 <a  className={"button"} href="./images/background.jpeg" download>Download</a>
             </div>
         </div>
