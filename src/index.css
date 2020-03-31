@@ -26,7 +26,7 @@ a {
 
 .content {
     background-color: rgba(0, 0, 0, 0.7);
-    padding: 1%;
+    padding: 2%;
 }
 
 .button {
@@ -52,4 +52,8 @@ a {
     display: flex;
     justify-content: center;
     margin-top: 10px;
+}
+
+#downloadUrl_input {
+    width: 100%;
 }

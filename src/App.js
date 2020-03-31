@@ -11,8 +11,8 @@ const App = () => {
             <label className={"label"} htmlFor={"downloadUrl"}>Just copy your image/video and it will appear here</label>
 
             <div className={"row"}>
-                <input id="downloadUrl" type="text"/>
-                <div className={"button"}>Download</div>
+                <input id="downloadUrl_input" type="text"/>
+                <a className={"button"} href="/images/myw3schoolsimage.jpg" download>Download</a>
             </div>
         </div>
     </div>
