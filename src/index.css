@@ -7,3 +7,8 @@ html {
 
     color: antiquewhite;
 }
+
+.App {
+    display: flex;
+    justify-content: center;
+}
