@@ -12,11 +12,9 @@ const App = () => {
 
             <div className={"row"}>
                 <input type="text"/>
-                <div className={"button"}>Download</div>
+                <a className={"button"} href={"./"}>Download</a>
             </div>
-
         </div>
-
     </div>
 };
 

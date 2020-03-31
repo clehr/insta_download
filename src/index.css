@@ -10,6 +10,11 @@ html {
     font-family: 'Open Sans', sans-serif;
 }
 
+a {
+    color: white;
+    text-decoration: none;
+}
+
 .App {
     display: flex;
     align-items: center;
@@ -18,7 +23,7 @@ html {
 }
 
 .content {
-    background-color: rgba(0,0,0,0.7);
+    background-color: rgba(0, 0, 0, 0.7);
     padding: 1%;
 }
 
@@ -27,8 +32,12 @@ html {
     border: white thin solid;
     margin-left: 10px;
     text-align: center;
+    transition: all .2s ease-in-out;
 }
 
+.button:hover {
+    transform: scale(1.5);
+}
 
 .row {
     display: flex;
