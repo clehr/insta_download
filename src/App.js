@@ -5,10 +5,10 @@ const App = () => {
     const [imageUrl, setImageUrl] = React.useState('');
 
     function download(url, filename) {
-        fetch(url).then(function (t) {
-            return t.blob().then((b) => {
+        fetch(url).then(function (response) {
+            return response.blob().then((blob) => {
                     var a = document.createElement("a");
-                    a.href = URL.createObjectURL(b);
+                    a.href = URL.createObjectURL(blob);
                     a.setAttribute("download", filename);
                     a.click();
                 }
