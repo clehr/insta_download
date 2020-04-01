@@ -20,7 +20,7 @@ const App = () => {
         <div className={"content"}>
             <h2>Insta Download!</h2>
 
-            <label className={"label"} htmlFor={"downloadUrl"}>Just copy your image/video and it will appear
+            <label className={"label"} htmlFor={"downloadUrl:input"}>Just copy your image/video and it will appear
                 here</label>
 
             <div className={"row"}>
