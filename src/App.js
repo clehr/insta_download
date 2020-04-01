@@ -27,7 +27,7 @@ const App = () => {
                 <input id="downloadUrl_input" type="text" onChange={(event) => setImageUrl(event.target.value)}
                        value={imageUrl}/>
                 <div className={"button"}
-                     onClick={() => download("https://images.pexels.com/photos/1252869/pexels-photo-1252869.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500", "geoip.jpg")}>Download
+                     onClick={() => download(imageUrl, "instaDownload.jpg")}>Download
                 </div>
             </div>
         </div>
