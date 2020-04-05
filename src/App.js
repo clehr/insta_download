@@ -4,11 +4,9 @@ import useAxios from 'axios-hooks';
 const App = () => {
 
     const [imageUrl, setImageUrl] = React.useState('');
-    const [test, setTest] = React.useState('');
 
-    function download(url, filename) {
-        let downloadUrl = url.substring(0, url.indexOf('?')).concat('media?size=l');
-        fetch(downloadUrl).then(function (response) {
+    function download(filename) {
+        fetch(imageUrl).then(function (response) {
             return response.blob().then((blob) => {
                     const a = document.createElement("a");
                     a.href = URL.createObjectURL(blob);
@@ -17,6 +15,13 @@ const App = () => {
                 }
             );
         });
+    }
+
+    const setDownloadUrl = (event) => {
+        const inputUrl = event.target.value
+        let downloadUrl = inputUrl.substring(0, inputUrl.indexOf('?')).concat('media?size=m');
+        setImageUrl(downloadUrl)
+
     }
 
     const [{ data, loading, error }, refetch] = useAxios(
@@ -35,12 +40,14 @@ const App = () => {
                 here</label>
 
             <div className={"row"}>
-                <input id="downloadUrl_input" type="text" onChange={(event) => setImageUrl(event.target.value)}
+                <input id="downloadUrl_input" type="text" onChange={(event) => setDownloadUrl(event)}
                        value={imageUrl}/>
                 <div className={"button"}
-                     onClick={() => download(imageUrl, "instaDownload.jpg")}>Download
+                     onClick={() => download("instaDownload.jpg")}>Download
                 </div>
             </div>
+
+            <img src={imageUrl} />
         </div>
     </div>
 };
