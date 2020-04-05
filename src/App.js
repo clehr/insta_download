@@ -6,6 +6,12 @@ const App = () => {
     const isChrome = !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime);
     const [imageUrl, setImageUrl] = React.useState('');
 
+    useEffect(() => {
+        if (isChrome) {
+            paste();
+        }
+    });
+
     function download(filename) {
         fetch(imageUrl).then(function (response) {
             return response.blob().then((blob) => {
