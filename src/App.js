@@ -8,11 +8,11 @@ const App = () => {
     function download(filename) {
         fetch(imageUrl).then(function (response) {
             return response.blob().then((blob) => {
-                    const a = document.createElement("a");
-                    a.href = URL.createObjectURL(blob);
-                    a.setAttribute("download", filename);
-                    a.click();
-                }
+                const a = document.createElement("a");
+                a.href = URL.createObjectURL(blob);
+                a.setAttribute("download", filename);
+                a.click();
+            }
             );
         });
     }
@@ -25,7 +25,7 @@ const App = () => {
 
     const [{ data, loading, error }, refetch] = useAxios(
         imageUrl
-     )
+    )
 
     return <div className={"App"}>
         <div className={"content"}>
@@ -36,14 +36,14 @@ const App = () => {
 
             <div className={"row"}>
                 <input id="downloadUrl_input" type="text" onChange={(event) => setDownloadUrl(event)}
-                       value={imageUrl}/>
+                    value={imageUrl} />
                 <div className={"button"}
-                     onClick={() => download("instaDownload.jpg")}>Download
+                    onClick={() => download("instaDownload.jpg")}>Download
                 </div>
             </div>
 
             <div>
-                { imageUrl && <a href={imageUrl} target="_blank">Link to image: {imageUrl}</a> }
+                {imageUrl && <a href={imageUrl} target="_blank">Link to image: {imageUrl}</a>}
                 <img src={imageUrl} />
             </div>
         </div>
