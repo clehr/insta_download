@@ -16,6 +16,10 @@ const App = () => {
         });
     }
 
+    function clear() {
+        setImageUrl('');
+    }
+
     const setDownloadUrl = (event) => {
         const inputUrl = event.target.value
         let downloadUrl = inputUrl.includes("?") ? inputUrl.substring(0, inputUrl.indexOf('?')).concat('media?size=m') : inputUrl;
@@ -36,13 +40,17 @@ const App = () => {
             <div className={"row"}>
                 <input id="downloadUrl_input" type="text" onChange={(event) => setDownloadUrl(event)}
                     value={imageUrl} />
+
+                <div className={"button"}
+                    onClick={() => clear()}>Delete
+                </div>
+
                 <div className={"button"}
                     onClick={() => download("instaDownload.jpg")}>Download
                 </div>
             </div>
 
             <div>
-                {imageUrl && <a href={imageUrl} target="_blank">Link to image: {imageUrl}</a>}
                 <img src={imageUrl} />
             </div>
         </div>
