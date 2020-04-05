@@ -19,7 +19,7 @@ const App = () => {
 
     const setDownloadUrl = (event) => {
         const inputUrl = event.target.value
-        let downloadUrl = inputUrl.substring(0, inputUrl.indexOf('?')).concat('media?size=m');
+        let downloadUrl = inputUrl.includes("?") ? inputUrl.substring(0, inputUrl.indexOf('?')).concat('media?size=m') : inputUrl;
         setImageUrl(downloadUrl)
     }
 
