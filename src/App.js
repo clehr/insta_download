@@ -3,6 +3,7 @@ import useAxios from 'axios-hooks';
 
 const App = () => {
 
+    const isChrome = !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime);
     const [imageUrl, setImageUrl] = React.useState('');
 
     function download(filename) {
@@ -14,6 +15,17 @@ const App = () => {
                 a.click();
             });
         });
+    }
+
+    function paste() {
+        navigator.clipboard.readText()
+            .then(text => {
+                document.getElementById("downloadUrl_input").value = text;
+
+            })
+            .catch(err => {
+                document.getElementById("downloadUrl_input").value = 'Failed to read clipboard contents: ' + err;
+            });
     }
 
     function clear() {
@@ -41,9 +53,15 @@ const App = () => {
                 <input id="downloadUrl_input" type="text" onChange={(event) => setDownloadUrl(event)}
                     value={imageUrl} />
 
-                <div className={"button"}
-                    onClick={() => clear()}>Delete
-                </div>
+                {
+                    isChrome ? <div className={"button"}
+                        onClick={() => paste()}>Paste
+                    </div>
+                        :
+                        <div className={"button"}
+                            onClick={() => clear()}>Clear
+                    </div>
+                }
 
                 <div className={"button"}
                     onClick={() => download("instaDownload.jpg")}>Download
