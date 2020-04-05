@@ -30,7 +30,7 @@ const App = () => {
         <div className={"content"}>
             <h2>Insta Download!</h2>
 
-            {JSON.stringify(data) != undefined && JSON.stringify(data).match(/eek/)}
+            {JSON.stringify(data) != undefined && JSON.stringify(data).match(/<img.*?src="(.*?)"[^\>]+>/g)}
 
             <label className={"label"} htmlFor={"downloadUrl_input"}>Just copy your image/video and it will appear
                 here</label>
