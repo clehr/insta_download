@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react';
+import useAxios from 'axios-hooks';
 
 const App = () => {
 
     const [imageUrl, setImageUrl] = React.useState('');
+    const [test, setTest] = React.useState('');
 
     function download(url, filename) {
         fetch(url).then(function (response) {
@@ -16,6 +18,10 @@ const App = () => {
         });
     }
 
+    const [{ data, loading, error }, refetch] = useAxios(
+        imageUrl
+     )
+
     useEffect(() => {
         console.log("Use Effect");
     });
@@ -23,6 +29,8 @@ const App = () => {
     return <div className={"App"}>
         <div className={"content"}>
             <h2>Insta Download!</h2>
+
+            {JSON.stringify(data) != undefined && JSON.stringify(data).match(/eek/)}
 
             <label className={"label"} htmlFor={"downloadUrl_input"}>Just copy your image/video and it will appear
                 here</label>
