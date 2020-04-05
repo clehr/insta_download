@@ -21,7 +21,6 @@ const App = () => {
         const inputUrl = event.target.value
         let downloadUrl = inputUrl.substring(0, inputUrl.indexOf('?')).concat('media?size=m');
         setImageUrl(downloadUrl)
-
     }
 
     const [{ data, loading, error }, refetch] = useAxios(
@@ -43,7 +42,10 @@ const App = () => {
                 </div>
             </div>
 
-            <img src={imageUrl} />
+            <div>
+                { imageUrl && <a href={imageUrl} target="_blank">Link to image: {imageUrl}</a> }
+                <img src={imageUrl} />
+            </div>
         </div>
     </div>
 };
