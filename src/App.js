@@ -28,10 +28,6 @@ const App = () => {
         imageUrl
      )
 
-    useEffect(() => {
-        console.log("Use Effect");
-    });
-
     return <div className={"App"}>
         <div className={"content"}>
             <h2>Insta Download!</h2>
