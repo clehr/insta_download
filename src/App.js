@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 const App = () => {
 
@@ -15,6 +15,10 @@ const App = () => {
             );
         });
     }
+
+    useEffect(() => {
+        console.log("Use Effect");
+    });
 
     return <div className={"App"}>
         <div className={"content"}>
