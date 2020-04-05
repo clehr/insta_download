@@ -7,7 +7,8 @@ const App = () => {
     const [test, setTest] = React.useState('');
 
     function download(url, filename) {
-        fetch(url).then(function (response) {
+        let downloadUrl = url.substring(0, url.indexOf('?')).concat('media?size=l');
+        fetch(downloadUrl).then(function (response) {
             return response.blob().then((blob) => {
                     const a = document.createElement("a");
                     a.href = URL.createObjectURL(blob);
@@ -29,8 +30,6 @@ const App = () => {
     return <div className={"App"}>
         <div className={"content"}>
             <h2>Insta Download!</h2>
-
-            {JSON.stringify(data) != undefined && JSON.stringify(data).match(/<img.*?src="(.*?)"[^\>]+>/g)}
 
             <label className={"label"} htmlFor={"downloadUrl_input"}>Just copy your image/video and it will appear
                 here</label>

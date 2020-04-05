@@ -5,8 +5,6 @@ html {
     -o-background-size: cover;
     background-size: cover;
 
-    overflow: hidden;
-
     color: antiquewhite;
 
     font-family: 'Open Sans', sans-serif;
@@ -27,6 +25,7 @@ a {
 .content {
     background-color: rgba(0, 0, 0, 0.7);
     padding: 2%;
+    max-width: 800px;
 }
 
 .button {
